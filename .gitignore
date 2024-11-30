@@ -1,1 +1,27 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+
+# Environment variables
+.env
+
+# System Files
+.DS_Store
+
+# IDE files
 .idea/
+*.iml
+
+# Node.js dependencies
+node_modules/
+
+# logs
+*.log
+
+# MacOS Finder files
+.AppleDouble
+.LSOverride
+
+#._*

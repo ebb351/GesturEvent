@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GestureVent Camera App</title>
+    <!-- Include Firebase JavaScript SDK -->
+    <script type="module" src="../../../../Downloads/NodeJS-Event-Gesture-Platform/public/cameraApp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection/face_detection.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <link rel="stylesheet" href="../../../../Downloads/NodeJS-Event-Gesture-Platform/public/style.css">
+</head>
+<body>
+    <h1>GestureVent Camera App</h1>
+    <div id="data">Loading...</div>
+
+    <section id="demos" class="invisible">
+        <div id="liveView" class="videoView">
+            <button id="webcamButton" class="mdc-button mdc-button--raised">
+                <span class="mdc-button__ripple"></span>
+                <span class="mdc-button__label">ENABLE WEBCAM</span>
+            </button>
+            <div style="position: relative;">
+                <video id="webcam" autoplay playsinline width="480" height="360"></video>
+                <canvas class="output_canvas" id="output_canvas" width="480" height="360" style="position: absolute; left: 0px; top: 0px;"></canvas>
+                <p id='gesture_output' class="output"></p>
+            </div>
+            <img id="capturedImage" alt="Captured Image" style="display: none; width: 480px; height: 360px;"/>
+        </div>
+    </section>
+</body>
+</html>

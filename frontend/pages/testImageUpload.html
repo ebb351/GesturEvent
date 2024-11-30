@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Image</title>
+</head>
+<body>
+  <h1>Upload a Hardcoded Image</h1>
+  <button id="uploadButton">Upload image.jpg</button>
+
+  <script>
+    document.getElementById('uploadButton').addEventListener('click', () => {
+      fetch('Eli.jpg')
+        .then(response => response.arrayBuffer())
+        .then(binaryData => {
+          sendBinaryData(window.location.origin + '/upload', binaryData);
+        })
+        .catch(error => {
+          console.error('Error fetching the image:', error);
+        });
+    });
+
+    async function sendBinaryData(url, binaryData) {
+      try {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/octet-stream',
+          },
+          body: binaryData,
+        });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const responseData = await response.json();
+        console.log(responseData);
+        alert('File uploaded successfully!');
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to upload file.');
+      }
+    }
+  </script>
+</body>
+</html>

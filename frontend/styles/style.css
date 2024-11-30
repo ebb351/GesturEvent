@@ -1,0 +1,36 @@
+body {
+  font-family: roboto;
+  margin: 2em;
+  color: #3d3d3d;
+  --mdc-theme-primary: #007f8b;
+  --mdc-theme-on-primary: #f1f3f4;
+}
+
+h1 {
+  color: #007f8b;
+}
+
+h2 {
+  clear: both;
+}
+
+video, canvas, #capturedImage {
+  display: block;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  width: 480px;
+  height: 360px;
+}
+
+.output_canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.output {
+  display: none;
+  width: 100%;
+  font-size: calc(8px + 1.2vw);
+}
