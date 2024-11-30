@@ -50,7 +50,7 @@ app.listen(port, hostname, () => {
 
 async function getCartoonImageFromData(input_image) {
   const replicate = new Replicate({
-      auth: "REDACTED"
+      auth: process.env.REPLICATE_API_KEY,
   });
 
   const input = {
